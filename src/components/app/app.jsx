@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import {WelcomePage} from "../welcome-page/welcome-page";
 
@@ -8,5 +8,7 @@ const AppSettings = {
 };
 
 export const App = () => {
-  return <WelcomePage settings={AppSettings}/>;
+  const startGame = () => {};
+
+  return <WelcomePage settings={AppSettings} startGame={startGame} />;
 };
