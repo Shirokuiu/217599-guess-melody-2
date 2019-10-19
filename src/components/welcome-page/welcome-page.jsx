@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const WelcomePage = ({settings}) => {
   return <section className="welcome">
@@ -7,10 +8,17 @@ export const WelcomePage = ({settings}) => {
     <h2 className="welcome__rules-title">Правила игры</h2>
     <p className="welcome__text">Правила просты:</p>
     <ul className="welcome__rules-list">
-      <li>За {settings.time} минут нужно ответить на все вопросы.</li>
-      <li>Можно допустить {settings.mistakes} ошибки.</li>
+      <li>За {settings.TIME} минут нужно ответить на все вопросы.</li>
+      <li>Можно допустить {settings.MISTAKES} ошибки.</li>
     </ul>
     <p className="welcome__text">Удачи!</p>
   </section>;
+};
+
+WelcomePage.propTypes = {
+  settings: PropTypes.exact({
+    TIME: PropTypes.number.isRequired,
+    MISTAKES: PropTypes.number.isRequired
+  })
 };
 

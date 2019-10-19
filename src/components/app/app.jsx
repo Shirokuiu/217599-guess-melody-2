@@ -1,7 +1,12 @@
 import React from 'react';
 
-import {WelcomePage} from "../welcome-page/welcome-page.jsx";
+import {WelcomePage} from "../welcome-page/welcome-page";
 
-export const App = ({settings}) => {
-  return <WelcomePage settings={settings}/>;
+const AppSettings = {
+  TIME: 5,
+  MISTAKES: 3
+};
+
+export const App = () => {
+  return <WelcomePage settings={AppSettings}/>;
 };
