@@ -1,14 +1,15 @@
 import React from "react";
 import renderer from "react-test-renderer";
 
-import App from "./app";
+import GenrePage from "./genre-page";
 import {gameSetting, questions} from "../../mocks/mocks";
 
-it(`App is render`, () => {
+it(`Is genre is rendered`, () => {
   const tree = renderer
-    .create(<App
+    .create(<GenrePage
       gameSetting={gameSetting}
-      questions={questions}
+      question={questions[0]}
+      onAnswerClick={jest.fn()}
     />).toJSON();
 
   expect(tree).toMatchSnapshot();
